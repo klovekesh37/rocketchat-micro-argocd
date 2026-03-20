@@ -1,0 +1,29 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: registry.rocket.chat/rocketchat/rocket.chat
+  tag: 8.0.1
+
+mongodb:
+  enabled: false
+
+externalMongodbUrl: "mongodb://rocketchat:admin@mongodb-0.mongodb-svc.rocketchat.svc.cluster.local:27017/rocketchat?authSource=rocketchat&replicaSet=mongodb"
+
+microservices:
+  enabled: true
+replicaCount: 1
+
+host: rc-argocd.kestron.org
+
+ingress:
+  enabled: true
+  ingressClassName: traefik
+  annotations:
+    cert-manager.io/cluster-issuer: production-cert-issuer
+  tls:
+    - secretName: rckube
+      hosts:
+        - rc-argocd.kestron.org
+
+nats:
+  cluster:
+    name: rocketchat-nats-cluster

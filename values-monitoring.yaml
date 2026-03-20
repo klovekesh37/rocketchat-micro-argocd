@@ -1,0 +1,8 @@
+ngress:
+  enabled: true
+  ingressClassName: "traefik"
+  tls: true
+  grafana:
+    enabled: true
+    host: "rc-argocd.kestron.org"
+    path: "/grafana"

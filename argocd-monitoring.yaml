@@ -1,0 +1,22 @@
+# argocd-monitoring.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rocketchat-monitoring
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://rocketchat.github.io/helm-charts
+    chart: monitoring
+    targetRevision: "*"
+    helm:
+      valueFiles:
+        - $values/rocketchat/values-monitoring.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: rc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

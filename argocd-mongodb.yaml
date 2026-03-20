@@ -8,8 +8,8 @@ spec:
   project: default
   source:
     repoURL: https://github.com/klovekesh37/rocketchat-micro-argocd.git 
-    targetRevision: main
-    path: rocketchat
+    targetRevision: master
+    path: .
     directory:
       include: "{mongodb-secrets.yaml,mongodb-community.yaml}"
   destination:

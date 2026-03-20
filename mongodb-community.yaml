@@ -2,7 +2,7 @@ apiVersion: mongodbcommunity.mongodb.com/v1
 kind: MongoDBCommunity
 metadata: 
   name: mongodb
-  namespace: rocketchat
+  namespace: rc
 spec:
   members:  1 
   type: ReplicaSet

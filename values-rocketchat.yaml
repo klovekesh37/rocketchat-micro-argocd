@@ -6,7 +6,7 @@ image:
 mongodb:
   enabled: false
 
-externalMongodbUrl: "mongodb://rocketchat:admin@mongodb-0.mongodb-svc.rocketchat.svc.cluster.local:27017/rocketchat?authSource=rocketchat&replicaSet=mongodb"
+externalMongodbUrl: "mongodb://rocketchat:admin@mongodb-0.mongodb-svc.rc.svc.cluster.local:27017/rocketchat?authSource=rocketchat&replicaSet=mongodb"
 
 microservices:
   enabled: true

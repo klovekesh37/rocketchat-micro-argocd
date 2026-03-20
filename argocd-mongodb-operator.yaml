@@ -8,7 +8,7 @@ spec:
   project: default
   source:
     repoURL: https://mongodb.github.io/helm-charts
-    chart: mongodb-kubernetes-operator
+    chart: mongodb-kubernetes  
     targetRevision: "*"
   destination:
     server: https://kubernetes.default.svc

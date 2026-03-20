@@ -6,13 +6,16 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: https://rocketchat.github.io/helm-charts
-    chart: monitoring
-    targetRevision: "*"
-    helm:
-      valueFiles:
-        - $values/rocketchat/values-monitoring.yaml
+  sources:                                          
+    - repoURL: https://rocketchat.github.io/helm-charts
+      chart: monitoring
+      targetRevision: "*"
+      helm:
+        valueFiles:
+          - $values/values-monitoring.yaml
+    - repoURL: https://github.com/klovekesh37/rocketchat-micro-argocd.git
+      targetRevision: master
+      ref: values                                   
   destination:
     server: https://kubernetes.default.svc
     namespace: rc
@@ -20,3 +23,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

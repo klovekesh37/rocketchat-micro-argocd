@@ -4,8 +4,8 @@ image:
   tag: 8.0.1
 
 extraEnv:
-  - name: OVERWRITE_SETTING_SAML_Custom_Default_name_overwrite
-    value: true
+  - name: OVERWRITE_SETTING_SAML_Custom_Default_allowed_clock_drift
+    value: "11220"
 
 mongodb:
   enabled: false

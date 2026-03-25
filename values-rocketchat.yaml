@@ -6,6 +6,8 @@ image:
 extraEnv:
   - name: OVERWRITE_SETTING_SAML_Custom_Default_allowed_clock_drift
     value: "11220"
+  - name: OVERWRITE_SETTINGS_SAML_Custom_Default_default_user_role
+    value: "admin"
 
 mongodb:
   enabled: false

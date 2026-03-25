@@ -3,6 +3,10 @@ image:
   repository: registry.rocket.chat/rocketchat/rocket.chat
   tag: 8.0.1
 
+extraEnv:
+  - name: OVERWRITE_SETTING_Show_Setup_Wizard
+    value: "completed"
+
 mongodb:
   enabled: false
 

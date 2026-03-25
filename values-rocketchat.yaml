@@ -4,10 +4,12 @@ image:
   tag: 8.0.1
 
 extraEnv:
-  - name: OVERWRITE_SETTING_SAML_Custom_Default_allowed_clock_drift
-    value: "11220"
+  - name: OVERWRITE_SETTINGS_SAML_Custom_Default_allowed_clock_drift
+    value: "11440"
   - name: OVERWRITE_SETTING_SAML_Custom_Default_default_user_role
-    value: "admin"
+    value: "user"
+  - name: OVERWRITE_SETTINGS_SAML_Custom_Default_provider
+    value: "my-rc-provide"
 
 mongodb:
   enabled: false

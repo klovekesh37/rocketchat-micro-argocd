@@ -14,7 +14,7 @@ spec:
         valueFiles:
           - $values/values-rocketchat.yaml
     - repoURL: https://github.com/klovekesh37/rocketchat-micro-argocd.git
-      targetRevision: master
+      targetRevision: testing_iximiuz
       ref: values                                   # ✅ this is what $values points to
   destination:
     server: https://kubernetes.default.svc

@@ -4,5 +4,5 @@ ngress:
   tls: true
   grafana:
     enabled: true
-    host: "chat.kestron.org"
+    host: "arg-chat.kestron.org"
     path: "/grafana"

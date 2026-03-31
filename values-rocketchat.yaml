@@ -20,7 +20,7 @@ microservices:
   enabled: true
 replicaCount: 1
 
-host: chat.kestron.org
+host: arg-chat.kestron.org
 
 ingress:
   enabled: true
@@ -30,7 +30,7 @@ ingress:
   tls:
     - secretName: rckube
       hosts:
-        - chat.kestron.org
+        - arg-chat.kestron.org
 
 nats:
   cluster:

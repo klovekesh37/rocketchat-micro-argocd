@@ -1,7 +1,7 @@
 image:
   pullPolicy: IfNotPresent
   repository: registry.rocket.chat/rocketchat/rocket.chat
-  tag: 8.2.1
+  tag: 8.4.3
 
     #extraEnv:
     #- name: OVERWRITE_SETTING_SAML_Custom_Default_allowed_clock_drift
@@ -18,7 +18,7 @@ externalMongodbUrl: "mongodb://rocketchat:admin@mongodb-0.mongodb-svc.rc.svc.clu
 
 microservices:
   enabled: true
-replicaCount: 1
+replicaCount: 2
 
 host: chat.kestron.org
 

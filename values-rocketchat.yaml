@@ -9,16 +9,83 @@ image:
     #- name: OVERWRITE_SETTING_SAML_Custom_Default_default_user_role
     #value: "user"
     #- name: OVERWRITE_SETTING_SAML_Custom_Default_provider
-    #value: "my-rc-provide"
+    #value: "my-rc-provide."
 
 mongodb:
   enabled: false
 
 externalMongodbUrl: "mongodb://rocketchat:admin@mongodb-0.mongodb-svc.rc.svc.cluster.local:27017/rocketchat?authSource=rocketchat&replicaSet=mongodb"
 
+livenessProbe:
+  enabled: true
+  path: /health
+  initialDelaySeconds: 60
+  periodSeconds: 15
+  timeoutSeconds: 5
+  failureThreshold: 3
+  successThreshold: 1
+
+readinessProbe:
+  enabled: true
+  path: /health
+  initialDelaySeconds: 10
+  periodSeconds: 15
+  timeoutSeconds: 5
+  failureThreshold: 3
+  successThreshold: 1
+
 microservices:
   enabled: true
-replicaCount: 2
+
+  logLevel: warn
+
+  heartbeatInterval: 10
+  heartbeatTimeout: 30
+
+  ## Parameters for each deployment:
+  presence:
+    replicas: 1
+    image:
+      repository: rocketchat/presence-service
+      pullPolicy: IfNotPresent
+    securityContext: {}
+    resources: {}
+    # Tolerations for pod assignment
+    # Ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+    tolerations: []
+
+  ddpStreamer:
+    replicas: 2
+    image:
+      repository: rocketchat/ddp-streamer-service
+      pullPolicy: IfNotPresent
+    securityContext: {}
+    resources: {}
+    # Tolerations for pod assignment
+    # Ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+    tolerations: []
+
+  account:
+    replicas: 1
+    image:
+      repository: rocketchat/account-service
+      pullPolicy: IfNotPresent
+    securityContext: {}
+    resources: {}
+    # Tolerations for pod assignment
+    # Ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+    tolerations: []
+
+  authorization:
+    replicas: 1
+    image:
+      repository: rocketchat/authorization-service
+      pullPolicy: IfNotPresent
+    securityContext: {}
+    resources: {}
+    # Tolerations for pod assignment
+    # Ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+    tolerations: []
 
 host: chat.kestron.org
 

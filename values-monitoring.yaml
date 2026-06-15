@@ -1,4 +1,4 @@
-ngress:
+ingress:
   enabled: true
   ingressClassName: "traefik"
   tls: true

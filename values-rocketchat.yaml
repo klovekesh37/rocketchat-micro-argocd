@@ -1,7 +1,7 @@
 image:
   pullPolicy: IfNotPresent
   repository: registry.rocket.chat/rocketchat/rocket.chat
-  tag: 8.4.3
+  tag: 8.5.0
 
     #extraEnv:
     #- name: OVERWRITE_SETTING_SAML_Custom_Default_allowed_clock_drift
